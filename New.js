@@ -83,17 +83,4 @@ board.on("ready", function () {
     buttons();
     })
     //Início do input do teclado
-
-
-
-
-
-
-
-
-
-
-
-
-
 })
