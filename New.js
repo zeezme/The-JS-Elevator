@@ -6,7 +6,8 @@ var board = new five.Board({
 });
 
 board.on("ready", function () {
-
+   //bool responsável por indicar se o botão de emergência foi pressionado ou não.
+    var EP = 0
     //Declaração LCD
     var lcd = new five.LCD({
         controller: "PCF8574T"
@@ -57,8 +58,7 @@ board.on("ready", function () {
 
      //Método de direcionamento do motor
     var elevador = {
-        var: EP = 0,
-        subir: function () {
+               subir: function () {
             stepper.step({
                 steps: 6500,
                 direction: Stepper.DIRECTION.CW //CW SOBE CCW DESCE
