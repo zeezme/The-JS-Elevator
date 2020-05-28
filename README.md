@@ -1,4 +1,5 @@
 # A JS ELEVATOR
+
 This project consist in the creation of a miniature elevator with focus in the programming. The biggest objective is of course to improve our programming skills as well as to get some fun doing it.
 To develop this setup, I've used some few things that may or may not be expensive(it really depends on where you live).
 
