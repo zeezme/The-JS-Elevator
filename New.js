@@ -70,7 +70,7 @@ board.on("ready", function () {
                 direction: Stepper.DIRECTION.CCW //CW SOBE CCW DESCE
             }, () => console.log("PRONTO #1"));
         },
-       parar: function Emergency () {EP===0?(r1.open(),EP=1):r1.close()}
+       parar: function Emergency () {EP===0?(r1.open(),EP=1):(r1.close(),EP=0)}
     }
     process.stdin.on("keypress", (ch, key) => {
     function buttons() {
@@ -79,8 +79,8 @@ board.on("ready", function () {
               :key.name === 'e'?elevador.parar()
               :null;
     }
-    stepper.rpm(180).ccw().accel(1600).decel(1600); //config do motor
+    stepper.rpm(240).ccw().accel(1600).decel(1600); //config do motor
     buttons();
+        
     })
-    //Início do input do teclado
 })
