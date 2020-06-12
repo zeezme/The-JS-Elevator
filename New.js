@@ -1,16 +1,15 @@
-var five = require("johnny-five");
 const keypress = require("keypress");
-const { Board, Stepper } = require("johnny-five");
+const { five, Board, Stepper } = require("johnny-five");
 var board = new five.Board({
-  port: "COM3"
+    port: "COM3"
 });
 
-board.on("ready", function () {
-   //bool responsável por indicar se o botão de emergência foi pressionado ou não.
+board.on("ready", () => {
+    //bool responsável por indicar se o botão de emergência foi pressionado ou não.
     var EP = 0
     //Declaração LCD
     var lcd = new five.LCD({
-        controller: "PCF8574T"
+        controller: "PCF8574T" //Modelo do LCD
     });
     //Inicialização do Teclado como Imput
     keypress(process.stdin);
@@ -35,13 +34,13 @@ board.on("ready", function () {
 
     //Início do código
 
-    r1.toggle(); 
+    r1.toggle();
 
     //Método que mostra as informações do LCD
     var informar = {
-        up: function () { lcd.print("SUBINDO");},
-        down: function () { lcd.print("Descendo");},
-        quit: function () { lcd.print("Desconectando");}
+        up: function () { lcd.print("Subindo"); },
+        down: function () { lcd.print("Descendo"); },
+        quit: function () { lcd.print("Desconectando"); }
     }
 
     //Informações de suporte
@@ -56,9 +55,9 @@ board.on("ready", function () {
     console.log("|---------------------------------|");
     console.log("\n");
 
-     //Método de direcionamento do motor
+    //Método de direcionamento do motor
     var elevador = {
-               subir: function () {
+        subir: function () {
             stepper.step({
                 steps: 6500,
                 direction: Stepper.DIRECTION.CW //CW SOBE CCW DESCE
@@ -70,17 +69,17 @@ board.on("ready", function () {
                 direction: Stepper.DIRECTION.CCW //CW SOBE CCW DESCE
             }, () => console.log("PRONTO #1"));
         },
-       parar: function Emergency () {EP===0?(r1.open(),EP=1):(r1.close(),EP=0)}
+        parar: function Emergency() { EP === 0 ? (r1.open(), EP = 1) : (r1.close(), EP = 0) }
     }
     process.stdin.on("keypress", (ch, key) => {
-    function buttons() {
-        return key.name === 'p'?elevador.subir()
-              :key.name === 'o'?elevador.descer()
-              :key.name === 'e'?elevador.parar()
-              :null;
-    }
-    stepper.rpm(240).ccw().accel(1600).decel(1600); //config do motor
-    buttons();
-        
+        function buttons() {
+            return key.name === 'p' ? elevador.subir()
+                : key.name === 'o' ? elevador.descer()
+                    : key.name === 'e' ? elevador.parar()
+                        : null;
+        }
+        stepper.rpm(500).ccw().accel(1600).decel(1600); //config. do motor
+        buttons();
+
     })
 })
