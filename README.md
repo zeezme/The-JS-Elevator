@@ -25,12 +25,10 @@ Used methods:
 This project consists in the creation of a miniature elevator with focus in the programming. The biggest objective is of course to improve our programming skills as well as to get some fun doing it.
 To develop this setup, I have used some few things that may or may not be expensive (it really depends on where you live).
 
-## List
+# Required Hardware
 
-<details><summary>Required Hardware</summary>
+<details><summary>List</summary>
 <p>
-
-#### ($_$)
 
 - Arduino UNO board.
 - Relay board
