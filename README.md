@@ -40,16 +40,11 @@ Essentially, when working with an Arduino you will probably use their proprietar
 - Visual Studio Code [Click-Me](https://code.visualstudio.com/)
 - NODE.JS [Click-Me](https://nodejs.org/en/download/)
 -	Johnny-Five API [Click-Me](https://github.com/rwaldron/johnny-five/wiki/Getting-Started)
-```javascript
-npm install johnny-five
-```
-- KeyPress
-```javascript
-npm install keypress
-```
+- KeyPress [Click-Me](https://www.npmjs.com/package/keypress)
   
 </p>
 </details>
+
 
 After installing the J5 API, you will need to write some code lines in order to make your program run it.
 ```javascript
@@ -61,6 +56,16 @@ var board = new five.Board({
 });
 
 ```
+
+Board Start Method:
+```javascript
+board.on("ready", function () {
+//code here
+}
+```
+
+
+
 
 
 
