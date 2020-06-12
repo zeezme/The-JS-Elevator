@@ -1,6 +1,25 @@
 ```diff
 - File in construction
 ```
+<details><summary> Basic Knowledge</summary>
+<p>
+  
+It is recommend having at least basic knowledge in JavaScript or any other programing language before taking this tutorial.
+
+Used methods:
+
+- Api’s
+- Variables
+- Functions
+- Objects
+- Methods
+- Data Types
+- Arrow functions
+- Conditionals and ternaries
+
+</p>
+</details>
+
 # A JS ELEVATOR
 
 This project consists in the creation of a miniature elevator with focus in the programming. The biggest objective is of course to improve our programming skills as well as to get some fun doing it.
@@ -59,7 +78,7 @@ var board = new five.Board({
 
 Board Start Method:
 ```javascript
-board.on("ready", function () {
+board.on("ready", () => {
 //code here
 }
 ```
