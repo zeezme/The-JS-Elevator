@@ -1,5 +1,6 @@
-## File in construction
-
+```diff
+- File in construction
+```
 # A JS ELEVATOR
 
 This project consists in the creation of a miniature elevator with focus in the programming. The biggest objective is of course to improve our programming skills as well as to get some fun doing it.
