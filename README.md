@@ -50,7 +50,7 @@ To develop this setup, I have used some few things that may or may not be expens
 
 # Coding
 After assembling the elevator, you will need to write some code, for that I recommend using Visual Studio Code.
-Essentially, when working with an Arduino you will probably use their proprietary language, which is based in C, but in this tutorial we will be using JavaScript, since the language actually doesn’t provide native support for Arduino boards the Johnny-Five API is required to make everything work properly.
+Essentially, when working with an Arduino you will probably use their proprietary language, which is based on C, but in this tutorial we will be using JavaScript, since the language actually doesn’t provide native support for Arduino boards the Johnny-Five API is required to make everything work properly.
 <details><summary>Required Software</summary>
 <p>
   
