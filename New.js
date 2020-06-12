@@ -1,5 +1,6 @@
 const keypress = require("keypress");
-const { five, Board, Stepper } = require("johnny-five");
+const  five = require("johnny-five");
+const { Board, Stepper } = require("johnny-five");
 var board = new five.Board({
     port: "COM3"
 });
@@ -40,7 +41,8 @@ board.on("ready", () => {
     var informar = {
         up: function () { lcd.print("Subindo"); },
         down: function () { lcd.print("Descendo"); },
-        quit: function () { lcd.print("Desconectando"); }
+        quit: function () { lcd.print("Desconectando"); },
+        stop: function () { lcd.print("ELEVADOR PARADO"); }
     }
 
     //Informações de suporte
@@ -57,19 +59,19 @@ board.on("ready", () => {
 
     //Método de direcionamento do motor
     var elevador = {
-        subir: function () {
+        subir: () => {
             stepper.step({
                 steps: 6500,
                 direction: Stepper.DIRECTION.CW //CW SOBE CCW DESCE
             }, () => console.log("PRONTO #1"));
         },
-        descer: function () {
+        descer: () => {
             stepper.step({
                 steps: 6500,
                 direction: Stepper.DIRECTION.CCW //CW SOBE CCW DESCE
             }, () => console.log("PRONTO #1"));
         },
-        parar: function Emergency() { EP === 0 ? (r1.open(), EP = 1) : (r1.close(), EP = 0) }
+        parar: function Emergency() { EP === 0 ? (r1.open(), EP = 1,informar.stop()) : (r1.close(), EP = 0, lcd.clear()) }
     }
     process.stdin.on("keypress", (ch, key) => {
         function buttons() {
