@@ -66,9 +66,9 @@ Essentially, when working with an Arduino you will probably use their proprietar
 
 After installing the J5 API, you will need to write some code lines in order to make your program run it.
 ```javascript
-
+const five = require("johnny-five");
 const keypress = require("keypress"); //Include keypress module in the object.
-const { five, Board, Stepper } = require("johnny-five"); //Include Johnny-Five module in the object.
+const {Board, Stepper } = require("johnny-five"); //Include Johnny-Five module in the object.
 var board = new five.Board({
   port: "COM3" //Change COM3 with the port you Arduino is connected to.
 });
